@@ -1,4 +1,4 @@
-package App::CSV2Chart::Command::gen;
+package App::CSV2Chart::Command::xlsx;
 
 use strict;
 use warnings;
@@ -19,8 +19,8 @@ use warnings;
 #
 
 use App::CSV2Chart -command;
-use Excel::Writer::XLSX;
-use Text::CSV;
+use Excel::Writer::XLSX ();
+use Text::CSV           ();
 
 sub opt_spec
 {
