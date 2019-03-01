@@ -22,6 +22,16 @@ use App::CSV2Chart -command;
 use Excel::Writer::XLSX ();
 use Text::CSV           ();
 
+sub description
+{
+    return "Generate .xlsx";
+}
+
+sub abstract
+{
+    return shift->description();
+}
+
 sub opt_spec
 {
     return ( [ "output|o=s", "Output path" ] );
@@ -226,3 +236,9 @@ sub execute
 1;
 
 __END__
+
+=head1 NAME
+
+csv2chart xlsx - generate an .xlsx file with an embedded chart from CSV data
+
+=cut
