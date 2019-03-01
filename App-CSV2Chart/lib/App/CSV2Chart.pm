@@ -10,6 +10,12 @@ use App::Cmd::Setup -app;
 
 __END__
 
+=head1 SYNOPSIS
+
+    ( echo "time,value" ; echo -n $'1,24\n2,36\n3,1977') | \
+        csv2chart xlsx --output spreadsheet.xlsx
+    gnumeric ./spreadsheet.xlsx
+
 =head1 COPYRIGHT & LICENSE
 
 Copyright 2019 by Shlomi Fish
