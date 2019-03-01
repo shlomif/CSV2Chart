@@ -1,12 +1,12 @@
-# ABSTRACT: generate charts on the command line.
-package App::CSV2Chart;
+#!/usr/bin/perl
+
+# PODNAME: csv2chart
 
 use strict;
 use warnings;
 
-use App::Cmd::Setup -app;
-
-1;
+use App::CSV2Chart;
+App::CSV2Chart->run;
 
 __END__
 
