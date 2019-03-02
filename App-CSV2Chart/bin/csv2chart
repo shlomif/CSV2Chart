@@ -10,6 +10,10 @@ App::CSV2Chart->run;
 
 __END__
 
+=head1 NAME
+
+csv2chart - command line utility to convert CSV data to a graphical chart
+
 =head1 COPYRIGHT & LICENSE
 
 Copyright 2019 by Shlomi Fish

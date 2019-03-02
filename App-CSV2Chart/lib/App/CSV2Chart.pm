@@ -10,6 +10,11 @@ use App::Cmd::Setup -app;
 
 __END__
 
+=head1 NAME
+
+csv2chart - command line utility to convert CSV data to a graphical chart
+
+
 =head1 SYNOPSIS
 
     ( echo "time,value" ; echo -n $'1,24\n2,36\n3,1977') | \
