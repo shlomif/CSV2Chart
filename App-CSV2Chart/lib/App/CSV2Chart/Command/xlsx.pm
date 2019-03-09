@@ -34,14 +34,17 @@ sub abstract
 
 sub opt_spec
 {
-    return ( [ "output|o=s", "Output path" ] );
+    return ( [ "output|o=s", "Output path" ],
+        [ 'exec|e=s@', "Execute command on the output" ] );
 }
 
 sub execute
 {
     my ( $self, $opt, $args ) = @_;
 
-    my $workbook  = Excel::Writer::XLSX->new( $opt->{output} );
+    my $fn        = $opt->{output};
+    my $exe       = $opt->{exec};
+    my $workbook  = Excel::Writer::XLSX->new($fn);
     my $worksheet = $workbook->add_worksheet();
     my $bold      = $workbook->add_format( bold => 1 );
 
@@ -230,6 +233,10 @@ sub execute
 
     $workbook->close();
 
+    if (@$exe)
+    {
+        system( @$exe, $fn );
+    }
     return;
 }
 
