@@ -43,7 +43,7 @@ sub execute
     my ( $self, $opt, $args ) = @_;
 
     my $fn        = $opt->{output};
-    my $exe       = $opt->{exec};
+    my $exe       = $opt->{exec} // [];
     my $workbook  = Excel::Writer::XLSX->new($fn);
     my $worksheet = $workbook->add_worksheet();
     my $bold      = $workbook->add_format( bold => 1 );
