@@ -21,6 +21,21 @@ csv2chart - command line utility to convert CSV data to a graphical chart
         csv2chart xlsx --output spreadsheet.xlsx
     gnumeric ./spreadsheet.xlsx
 
+
+=head1 SEE ALSO
+
+=over 4
+
+=item * L<https://csvkit.readthedocs.io/>
+
+=item * L<https://github.com/watson/chart-csv>
+
+But see L<https://github.com/watson/chart-csv/issues/4> .
+
+=back
+
+L<Text::CSV> .
+
 =head1 COPYRIGHT & LICENSE
 
 Copyright 2019 by Shlomi Fish
