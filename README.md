@@ -8,28 +8,25 @@ App::CSV2Chart - generate charts on the command line.
 
 # VERSION
 
-version 0.0.1
+version 0.4.0
 
 # SYNOPSIS
 
     ( echo "time,value" ; echo -n $'1,24\n2,36\n3,1977') | \
-        csv2chart xlsx --output spreadsheet.xlsx
-    gnumeric ./spreadsheet.xlsx
+        csv2chart xlsx --output spreadsheet.xlsx \
+            --exec gnumeric \
+            --title "Values vs. Times"
 
 # NAME
 
 csv2chart - command line utility to convert CSV data to a graphical chart
-
-# VERSION
-
-version 0.0.1
 
 # COPYRIGHT & LICENSE
 
 Copyright 2019 by Shlomi Fish
 
 This program is distributed under the MIT / Expat License:
-[http://www.opensource.org/licenses/mit-license.php](http://www.opensource.org/licenses/mit-license.php)
+http://www.opensource.org/licenses/mit-license.php
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
