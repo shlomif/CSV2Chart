@@ -4,7 +4,7 @@ App::CSV2Chart - generate charts on the command line.
 
 # Screenshots
 
-![Image](./screenshots/csv2chart-gnumeric--2019-03-09.png)
+![Image](./screenshots/csv2chart-2019-05-28.webp)
 
 # VERSION
 
