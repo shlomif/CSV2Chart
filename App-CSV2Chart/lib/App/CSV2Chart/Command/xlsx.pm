@@ -75,13 +75,16 @@ sub execute
     # Create a new chart object. In this case an embedded chart.
     my $chart1 = $workbook->add_chart( type => 'scatter', embedded => 1 );
 
-    # Configure second series. Note alternative use of array ref to define
-    # ranges: [ $sheetname, $row_start, $row_end, $col_start, $col_end ].
-    $chart1->add_series(
-        name       => '=Sheet1!$B$1',
-        categories => [ 'Sheet1', 1, 1 + $h, 0, 0 ],
-        values     => [ 'Sheet1', 1, 1 + $h, 1, 1 ],
-    );
+    foreach my $series_idx ( 0 .. $#$data - 1 )
+    {
+        # Configure second series. Note alternative use of array ref to define
+        # ranges: [ $sheetname, $row_start, $row_end, $col_start, $col_end ].
+        $chart1->add_series(
+            name       => '=Sheet1!$' . chr( ord('B') + $series_idx ) . '$1',
+            categories => [ 'Sheet1', 1, 1 + $h, 0, 0 ],
+            values => [ 'Sheet1', 1, 1 + $h, 1 + $series_idx, 1 + $series_idx ],
+        );
+    }
 
     # Add a chart title and some axis labels.
     $chart1->set_title(
