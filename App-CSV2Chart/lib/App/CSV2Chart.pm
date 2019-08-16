@@ -32,9 +32,9 @@ csv2chart - command line utility to convert CSV data to a graphical chart
 
 But see L<https://github.com/watson/chart-csv/issues/4> .
 
-=back
+=item * L<Text::CSV>
 
-L<Text::CSV> .
+=back
 
 =head1 COPYRIGHT & LICENSE
 
