@@ -82,6 +82,7 @@ __END__
 
 =head1 NAME
 
-csv2chart xlsx - generate an .xlsx file with an embedded chart from CSV data
+csv2chart svg - generate an .svg file of a chart from CSV data (requires a recent version of
+gnumeric's ssconvert utility).
 
 =cut
