@@ -1,4 +1,4 @@
-package App::CSV2Chart::API::ToXSLX;
+package App::CSV2Chart::API::ToXLSX;
 
 use strict;
 use warnings;
@@ -225,7 +225,7 @@ __END__
 
 =head1 NAME
 
-App::CSV2Chart::API::ToXSLX - convert CSV to xlsx internal API
+App::CSV2Chart::API::ToXLSX - convert CSV to xlsx internal API
 
 =head1 FUNCTIONS
 
