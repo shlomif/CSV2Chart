@@ -216,6 +216,7 @@ sub csv_to_xlsx
 
     $workbook->close();
 
+    return;
 }
 
 1;
