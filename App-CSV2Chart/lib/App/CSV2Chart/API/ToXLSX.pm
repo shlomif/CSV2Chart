@@ -2,6 +2,7 @@ package App::CSV2Chart::API::ToXLSX;
 
 use strict;
 use warnings;
+use 5.014;
 
 use Excel::Writer::XLSX ();
 use Text::CSV           ();

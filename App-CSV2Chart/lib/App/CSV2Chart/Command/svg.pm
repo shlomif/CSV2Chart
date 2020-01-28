@@ -2,6 +2,7 @@ package App::CSV2Chart::Command::svg;
 
 use strict;
 use warnings;
+use 5.014;
 
 use App::CSV2Chart -command;
 use App::CSV2Chart::API::ToXLSX ();
