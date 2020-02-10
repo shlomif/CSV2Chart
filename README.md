@@ -80,3 +80,4 @@ https://github.com/shlomif/CSV2Chart
 # SEE ALSO
 
 - [csv2chart in Java](https://github.com/eobermuhlner/csv2chart) - supports many types of charts and SVG (or PNG) output, but cannot emit .xlsx files.
+- [csvkit](https://csvkit.readthedocs.io/en/latest/) - a suite of CSV-manipulation command line programs.
