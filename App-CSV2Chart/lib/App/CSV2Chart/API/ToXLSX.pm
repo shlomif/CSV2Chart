@@ -23,10 +23,11 @@ use Text::CSV           ();
 #
 sub csv_to_xlsx
 {
-    my $args  = shift;
-    my $fh    = $args->{input_fh};
-    my $fn    = $args->{output_fn};
-    my $title = $args->{title};
+    my $args       = shift;
+    my $fh         = $args->{input_fh};
+    my $fn         = $args->{output_fn};
+    my $title      = $args->{title};
+    my $chart_type = ( $args->{chart_type} // 'scatter' );
 
     my $csv       = Text::CSV->new;
     my $workbook  = Excel::Writer::XLSX->new($fn);
@@ -51,7 +52,7 @@ sub csv_to_xlsx
     my $h = @{ $data->[0] };
 
     # Create a new chart object. In this case an embedded chart.
-    my $chart1 = $workbook->add_chart( type => 'scatter', embedded => 1 );
+    my $chart1 = $workbook->add_chart( type => $chart_type, embedded => 1 );
 
     foreach my $series_idx ( 0 .. $#$data - 1 )
     {

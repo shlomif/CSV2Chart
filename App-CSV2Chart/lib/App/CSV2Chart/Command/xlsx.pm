@@ -19,9 +19,10 @@ sub abstract
 sub opt_spec
 {
     return (
-        [ "output|o=s", "Output path" ],
-        [ "title=s",    "Chart Title" ],
-        [ 'exec|e=s@',  "Execute command on the output" ]
+        [ "chart-type=s", "Chart Type" ],
+        [ "output|o=s",   "Output path" ],
+        [ "title=s",      "Chart Title" ],
+        [ 'exec|e=s@',    "Execute command on the output" ]
     );
 }
 
@@ -36,9 +37,10 @@ sub execute
 
     App::CSV2Chart::API::ToXLSX::csv_to_xlsx(
         {
-            input_fh  => $fh,
-            output_fn => $fn,
-            title     => $opt->{title},
+            input_fh   => $fh,
+            output_fn  => $fn,
+            title      => $opt->{title},
+            chart_type => $opt->{'chart_type'},
         }
     );
     if (@$exe)
