@@ -18,12 +18,7 @@ sub abstract
 
 sub opt_spec
 {
-    return (
-        [ "chart-type=s", "Chart Type" ],
-        [ "output|o=s",   "Output path" ],
-        [ "title=s",      "Chart Title" ],
-        [ 'exec|e=s@',    "Execute command on the output" ]
-    );
+    return @{ App::CSV2Chart::API::ToXLSX::_to_xlsx_common_opt_spec() };
 }
 
 sub execute
@@ -39,6 +34,8 @@ sub execute
         {
             input_fh   => $fh,
             output_fn  => $fn,
+            height     => $opt->{height},
+            width      => $opt->{width},
             title      => $opt->{title},
             chart_type => $opt->{'chart_type'},
         }

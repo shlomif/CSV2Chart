@@ -21,19 +21,15 @@ sub abstract
 
 sub opt_spec
 {
-    return (
-        [ "output|o=s", "Output path" ],
-        [ "title=s",    "Chart Title" ],
-        [ 'exec|e=s@',  "Execute command on the output" ]
-    );
+    return @{ App::CSV2Chart::API::ToXLSX::_to_xlsx_common_opt_spec() };
 }
 
 sub execute
 {
     my ( $self, $opt, $args ) = @_;
 
-    my $output_fn = $opt->{output};
-    my $exe       = $opt->{exec} // [];
+    my $output_fn = delete $opt->{output};
+    my $exe       = delete( $opt->{exec} ) // [];
 
     my $fh = \*STDIN;
 
@@ -50,7 +46,7 @@ sub execute
         {
             input_fh  => $fh,
             output_fn => "$xlsx",
-            title     => $opt->{title},
+            %$opt,
         }
     );
 
